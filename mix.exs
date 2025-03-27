@@ -19,7 +19,7 @@ defmodule UmeDemo.MixProject do
   def application do
     [
       mod: {UmeDemo.Application, []},
-      extra_applications: [:logger, :runtime_tools]
+      extra_applications: [:logger, :wx, :observer, :runtime_tools]
     ]
   end
 
@@ -32,6 +32,9 @@ defmodule UmeDemo.MixProject do
   # Type `mix help deps` for examples and options.
   defp deps do
     [
+      {:aircraft, path: "/home/drobban/code/elixir/aircraft"},
+      {:sam_site, path: "/home/drobban/code/elixir/sam_site"},
+      {:flight_control, path: "/home/drobban/code/elixir/flight_control"},
       {:phoenix, "~> 1.7.18"}
     ]
   end

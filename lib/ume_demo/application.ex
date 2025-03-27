@@ -7,6 +7,9 @@ defmodule UmeDemo.Application do
 
   @impl true
   def start(_type, _args) do
+    # Connect Node. 
+    Node.connect(:"crash24@127.0.0.1")
+
     children = [
       {Phoenix.PubSub, name: FlightTracker.PubSub}
     ]
