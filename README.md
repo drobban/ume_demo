@@ -1,18 +1,30 @@
 # UmeDemo
 
-To start your Phoenix server:
+## Setup
 
-  * Run `mix setup` to install and setup dependencies
-  * Start Phoenix endpoint with `mix phx.server` or inside IEx with `iex -S mix phx.server`
+Start node A
 
-Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
+```bash
+cd ~/flight_tracker
+iex --name crash24@127.0.0.1 --cookie secretofmana -S mix phx.server
+```
 
-Ready to run in production? Please [check our deployment guides](https://hexdocs.pm/phoenix/deployment.html).
 
-## Learn more
+Start node B 
 
-  * Official website: https://www.phoenixframework.org/
-  * Guides: https://hexdocs.pm/phoenix/overview.html
-  * Docs: https://hexdocs.pm/phoenix
-  * Forum: https://elixirforum.com/c/phoenix-forum
-  * Source: https://github.com/phoenixframework/phoenix
+```bash
+cd ~/ume_demo
+iex --name sam_site@127.0.0.1 --cookie secretofmana -S mix run
+```
+
+node B assumes node A is called crash24@127.0.0.1
+
+
+### Init aircraft / sam site
+
+```elixir
+Aircraft.spawn_random(FlightControl, FlightTracker.Super, 750)
+
+SamSite.round_trip(FlightControl, {Phoenix.PubSub, FlightTracker.PubSub})
+```
+
