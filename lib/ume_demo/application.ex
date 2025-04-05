@@ -11,7 +11,8 @@ defmodule UmeDemo.Application do
     Node.connect(:"crash24@127.0.0.1")
 
     children = [
-      {Phoenix.PubSub, name: FlightTracker.PubSub}
+      {Phoenix.PubSub, name: FlightTracker.PubSub},
+      UmeDemo.Super,
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
