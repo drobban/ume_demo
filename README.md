@@ -54,7 +54,7 @@ node B assumes node A is called crash24@127.0.0.1
 
 SamSite.supervised_round_trip(UmeDemo.Super, FlightControl, {Phoenix.PubSub, FlightTracker.PubSub})
 
-Aircraft.spawn_kalinin_random(FlightControl, FlightTracker.Super, 5)
+Aircraft.spawn_kalinin_random(FlightControl, FlightTracker.Super, 10)
 
 Aircraft.spawn_random(FlightControl, FlightTracker.Super, 2750)
 

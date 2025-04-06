@@ -32,9 +32,9 @@ defmodule UmeDemo.MixProject do
   # Type `mix help deps` for examples and options.
   defp deps do
     [
-      {:aircraft, path: "/home/drobban/code/elixir/aircraft"},
-      {:sam_site, path: "/home/drobban/code/elixir/sam_site"},
-      {:flight_control, path: "/home/drobban/code/elixir/flight_control"},
+      {:aircraft, git: "https://github.com/drobban/aircraft.git"},
+      {:sam_site, git: "https://github.com/drobban/sam_site.git"},
+      {:flight_control, git: "https://github.com/drobban/flight_control.git"},
       {:phoenix, "~> 1.7.18"}
     ]
   end
